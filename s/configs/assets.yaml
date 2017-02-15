@@ -1,0 +1,35 @@
+css-vendor:
+    filters: scss,cssmin
+    depends: '**/*.scss'
+    output: ../public/vendor.%(version)s.css
+    contents: styles/app.scss
+
+js-vendor:
+    filters: jsmin
+    output: ../public/vendor.%(version)s.js
+    contents:
+      - javascripts/pace.js
+      - javascripts/moment-with-locales.js
+      - javascripts/jquery.js
+      - javascripts/handlebars.js
+      - javascripts/handlers-jquery.js
+      - javascripts/cookies.js
+      - javascripts/lodash.js
+      - javascripts/materialize.js
+
+baka-js:
+    config:
+      CLOSURE_COMPRESSOR_OPTIMIZATION: SIMPLE_OPTIMIZATIONS
+    filters: closure_js
+    output: ../public/baka.%(version)s.js
+    contents:
+      - javascripts/baka/class.js
+      - javascripts/baka/baka.js
+      - javascripts/baka/fun.js
+      - javascripts/baka/app.js
+      - javascripts/baka/containers.js
+      - javascripts/baka/helpers.js
+      - javascripts/baka/forms.js
+      - javascripts/baka/fields.js
+      - javascripts/baka/actions.js
+      - javascripts/baka/searchbox.js

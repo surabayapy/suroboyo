@@ -1,0 +1,36 @@
+// untuk navigation bar
+
+$x-mobile-breakpoint: 480px;
+
+// ============================================================================
+// HELPER CLASSES
+// ============================================================================
+
+// mobile portrait
+.nav-bar-height      { height: $mui-appbar-height-xs-portrait; }
+.nav-bar-min-height  { min-height: $mui-appbar-height-xs-portrait; }
+.nav-bar-line-height { line-height: $mui-appbar-height-xs-portrait; }
+.nav-bar-top         { top: $mui-appbar-height-xs-portrait; }
+
+// mobile landscape
+@media (orientation: landscape) and (max-height: $x-mobile-breakpoint) {
+	.nav-bar-height      { height: $mui-appbar-height-xs-landscape; }
+	.nav-bar-min-height  { min-height: $mui-appbar-height-xs-landscape; }
+	.nav-bar-line-height { line-height: $mui-appbar-height-xs-landscape; }
+	.nav-bar-top         { top: $mui-appbar-height-xs-landscape; }
+}
+
+// all other screen sizes
+@media (min-width: $x-mobile-breakpoint) {
+	.nav-bar-height      { height: $mui-appbar-height; }
+	.nav-bar-min-height  { min-height: $mui-appbar-height; }
+	.nav-bar-line-height { line-height: $mui-appbar-height; }
+	.nav-bar-top         { top: $mui-appbar-height; }  
+}
+
+.nav-bar {
+	@extend .nav-bar-min-height;
+
+	background-color: $mui-appbar-bg-color;
+	color: $mui-appbar-font-color;
+}

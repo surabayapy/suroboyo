@@ -1,0 +1,213 @@
+@mixin form-label() {
+  // Positioning
+  position: absolute;
+  top: 0;
+  
+  // Display
+  display: block;
+  width: 100%;
+  
+  // Other
+  color: $mui-label-font-color;
+  font-size: $mui-label-font-size;
+  font-weight: 600;
+  line-height: $xFormLabelLineHeight;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin form-error() {
+  display: none;
+  position: absolute;
+  right: 0px;
+  color: $mui-label-font-color;
+}
+
+@mixin form-ok() {
+  position: absolute;
+  right: 5px;
+  top: 2px;
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  content: "\f000";
+  color: $mui-input-border-color-focus;
+  animation: fadein 0.5s;
+}
+
+// **************************
+// Typography
+// **************************
+@mixin mui-text($mui-name) {
+  $mui-styles: map-get($mui-mui-text-styles, $mui-name);
+
+  font-weight: map-get($mui-styles, "font-weight");
+  font-size: map-get($mui-styles, "font-size");
+  line-height: map-get($mui-styles, "line-height");
+
+  @if $mui-name == "button" {
+    text-transform: uppercase;
+  }
+}
+
+
+$mui-mui-text-styles: (
+  "display4": (
+    "font-weight": 300,
+    "font-size": 112px,
+    "line-height": 112px
+    ),
+  "display3": (
+    "font-weight": 400,
+    "font-size": 56px,
+    "line-height": 56px
+    ),
+  "display2": (
+    "font-weight": 400,
+    "font-size": 45px,
+    "line-height": 48px
+    ),
+  "display1": (
+    "font-weight": 400,
+    "font-size": 34px,
+    "line-height": 40px
+    ),
+  "headline": (
+    "font-weight": 400,
+    "font-size": 24px,
+    "line-height": 32px
+    ),
+  "title": (
+    "font-weight": 400,
+    "font-size": 20px,
+    "line-height": 28px
+    ),
+  "subhead": (
+    "font-weight": 400,
+    "font-size": 16px,
+    "line-height": 24px
+    ),
+  "body2": (
+    "font-weight": 500,
+    "font-size": 14px,
+    "line-height": 24px
+    ),
+  "body1": (
+    "font-weight": 400,
+    "font-size": 14px,
+    "line-height": 20px
+    ),
+  "caption": (
+    "font-weight": 400,
+    "font-size": 12px,
+    "line-height": 16px
+    ),
+  "menu": (
+    "font-weight": 500,
+    "font-size": 13px,
+    "line-height": 17px
+    ),
+  "button": (
+    "font-weight": 500,
+    "font-size": 14px,
+    "line-height": 18px
+    )
+  );
+
+// Button mixins
+
+@mixin button-variant($font-color, $bg-color) {
+  color: $font-color;
+  background-color: $bg-color;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $font-color;
+    background-color: lighten($bg-color, 5%);
+  }
+
+  &[disabled] {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $font-color;
+      background-color: $bg-color;
+    }
+  }
+}
+
+@mixin button-flat-variant($font-color, $bg-color-hover) {
+  &.btn--flat {
+    color: $font-color;
+    background-color: transparent;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $font-color;
+      background-color: $bg-color-hover;
+    }
+
+    &[disabled] {
+      &:hover,
+      &:focus,
+      &:active {
+        color: $font-color;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// Form
+@mixin form-control-focus($color: $mui-input-border-color-focus) {
+  $color-rgba: rgba(red($color), green($color), blue($color), .3);
+  &:focus {
+    border-color: $color;
+    outline: 0;
+    @include box-shadow(inset 0 1px 1px rgba(0,0,0,.055), 0 0 2px $color-rgba);
+  }
+}
+
+// Button sizes
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size,
+ $line-height, $border-radius) {
+  padding: ($padding-vertical + 1px) ($padding-horizontal + 1px);
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow; // iOS <4.3 & Android <4.1
+  box-shadow: $shadow;
+}
+
+// Box sizing
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+
+// Placeholder text
+@mixin placeholder($color: $mui-input-placeholder-color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}

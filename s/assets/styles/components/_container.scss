@@ -1,0 +1,29 @@
+/**
+ * MUI Container module
+ */
+
+.container {
+  @include mui-container-fixed();
+
+  @media (min-width: $mui-screen-sm-min) {
+    max-width: $mui-container-sm;
+  }
+  @media (min-width: $mui-screen-md-min) {
+    max-width: $mui-container-md;
+  }
+  @media (min-width: $mui-screen-lg-min) {
+    max-width: $mui-container-lg;
+  }
+  @media (min-width: $mui-screen-xl-min) {
+    max-width: $mui-container-xl;
+  }
+}
+
+.container-fluid {
+  @include mui-container-fixed();
+}
+
+.container-wrapper {
+  width: 980px; 
+  margin: auto;
+}

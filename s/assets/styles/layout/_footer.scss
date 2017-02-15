@@ -1,0 +1,39 @@
+#footer { 
+	clear: both; /*height: 36px;*/ 
+	width: 100%; 
+	color: #eeeeee; margin-top: 42px; 
+	position: absolute; bottom: 0; 
+}
+
+.site-footer {
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	margin-top: 40px;
+	font-size: 12px;
+	line-height: 1.5;
+	color: rgb(118, 118, 118);
+	border-top: 1px solid $mui-primary-color;
+}
+.site-footer-links {
+	margin: 0px;
+	list-style: none;
+	&.md {
+		font-size: 28px;
+	}
+}
+.site-footer-links li {
+	display: inline-block;
+	line-height: 16px;
+}
+.float-right {
+	float: right !important;
+}
+.site-footer .mark-zi {
+	position: absolute;
+	top: 38px;
+	left: 50%;
+	margin-left: -12px;
+	font-size: 24px;
+	color: rgb(204, 204, 204);
+}

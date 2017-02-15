@@ -1,0 +1,40 @@
+
+.banner-page {
+	width: 100%; 
+	margin: 100px auto 80px auto; 
+	position: relative;
+	text-align: center;
+}
+
+.error-page {
+	@extend .banner-page;
+
+	.title {
+		padding-bottom: 15px;
+	}
+	h1 { 
+		color: #404040;
+		font-size: 140px; 
+		margin: 80px 0; 
+		position: relative; 
+		padding-left: 10px; 
+	}
+	h2 { 
+		font-size: 22px; 
+		font-weight: normal;  
+	}
+	p { 
+		width: 100%; 
+		padding: 13px 0;
+		font-size: 20px; text-align: center; 
+	}
+}
+
+.coming-soon-page {
+	@extend .error-page;
+
+	h2 { 
+		color: #404040;
+		font-size: 80px; 
+	}
+}

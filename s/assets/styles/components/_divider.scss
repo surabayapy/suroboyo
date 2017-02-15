@@ -1,0 +1,25 @@
+/**
+ * MUI Divider Component and CSS Helpers
+ */
+
+.divider {
+  display: block;
+  height: 1px;
+  background-color: $mui-divider-color;
+}
+
+.divider-top {
+  border-top: 1px solid $mui-divider-color;
+}
+
+.divider-bottom {
+  border-bottom: 1px solid $mui-divider-color;
+}
+
+.divider-left {
+  border-left: 1px solid $mui-divider-color;
+}
+
+.divider-right {
+  border-right: 1px solid $mui-divider-color;
+}

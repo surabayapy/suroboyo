@@ -1,0 +1,36 @@
+-inherit _base.html
+
+-def title()
+  == "COMING SOON!!"
+
+.row
+  <%self.widgets:panel>
+    .col-sm-12.col-xs-12
+      .coming-soon-page
+        h2.red.title
+          span COMING SOON!!
+        img.logo-text.md src="/static/img/logo-text.png"
+        span.divider
+        p "Nantikan kami, surabaya.py komunitas python surabaya!"
+        ul.site-footer-links.md
+          li
+            a href="http://t.me/surabayadotpy"
+              i.fa.fa-telegram.fa-fw
+              = "@surabayadotpy"
+          li
+            a href="https://github.com/surabaya-py"
+              i.fa.fa-github.fa-fw
+              = "surabaya-py"
+          li
+            a href="https://web.facebook.com/groups/surabaya.py"
+              i.fa.fa-facebook.fa-fw
+              = "@surabaya.py"
+          li
+            a href="https://twitter.com/surabayapy"
+              i.fa.fa-twitter.fa-fw
+              = "@surabayapy"
+
+        a.btn.btn--primary href="mailto:surabaya.py@gmail.com" title=""
+          i.fa.fa-envelope.fa-fw
+          = "Hubungi Kami"
+  </%self.widgets:panel>

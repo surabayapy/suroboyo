@@ -1,0 +1,3 @@
+-e git+https://github.com/baka-framework/baka.git@master#egg=baka
+-e git+https://github.com/suryakencana/garasu_webassets.git@master#egg=garasu_webassets
+-e git+https://github.com/suryakencana/garasu_wsgithumb.git@master#egg=garasu_wsgithumb

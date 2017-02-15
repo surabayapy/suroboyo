@@ -1,0 +1,148 @@
+$xFormLabelLineHeight: floor($mui-label-font-size * 1.75);
+
+
+.inputfield {
+  display: block;
+  padding-top: $xFormLabelLineHeight;
+  margin-bottom: $mui-form-group-margin-bottom;
+  position: relative;
+
+  > label {
+    @include form-label();
+  }
+
+  > textarea {
+    padding-top: 5px;
+  }
+
+  > input,
+  > textarea {
+    display: block;
+
+    &:focus ~ label {
+      color: $mui-input-border-color-focus;
+    }  
+  }
+
+  > .error-field {
+    @include form-error();
+  }
+}
+
+
+.inputfield > input,
+.inputfield > textarea {
+  display: block;
+  color: $mui-input-font-color;
+  background-color: $mui-input-bg-color;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $mui-input-border-color;
+  border-radius: $mui-border-radius-default; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  @include box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+
+  // Placeholder
+  @include placeholder;
+  outline: none;
+  width: 100%;
+  font-size: $mui-input-font-size;
+  font-weight: 500;
+  padding-left: 14px;
+  white-space: nowrap;
+  line-height: 20px;
+
+  // Bugfix for firefox-android
+  background-image: none;
+
+  &:focus {
+    border-color: $mui-input-border-color-focus;
+    border-width: 1px;
+    border-radius: $mui-border-radius-default;
+  }
+
+  &:disabled,
+  &:read-only {
+    cursor: $mui-cursor-disabled;
+    background-color: $mui-input-bg-color-disabled;
+    opacity: 1;  // iOS fix for unreadable disabled content
+  }
+
+  &::placeholder {
+    color: $mui-input-placeholder-color;
+    opacity: 1;  // Normalize firefox
+  }
+}
+
+.inputfield > input {
+  height: $mui-input-height;
+}
+
+.inputfield > textarea {
+  min-height: $mui-textarea-height;
+
+  // Compensate for height change on focus
+  &[rows]:not([rows="2"]):focus {
+    margin-bottom: -1px;
+  }
+}
+
+
+
+.inputfield > input:invalid:not(:focus),
+.inputfield > textarea:invalid:not(:focus),
+.inputfield > input:not(:focus)._invalid,
+.inputfield > textarea:not(:focus)._invalid {
+  &:not(:required),
+  &:required.is-not-empty,
+  &:required.is-empty.is-dirty,
+  &:required[value]:not([value=""]):not(.is-empty):not(.is-not-empty),
+  &:required:not(:empty):not(.is-empty):not(.is-not-empty) {
+    border-color: $mui-danger-color;
+    border-width: 1px;
+    border-radius: $mui-border-radius-default;
+  }
+}
+
+.inputfield > input:invalid:not(:focus),
+.inputfield > textarea:invalid:not(:focus),
+.inputfield > input:not(:focus)._invalid,
+.inputfield > textarea:not(:focus)._invalid {
+  // Set label color to danger color
+  &:not(:required),
+  &:required.is-not-empty,
+  &:required[value]:not([value=""]):not(.is-empty):not(.is-not-empty),
+  &:required:not(:empty):not(.is-empty):not(.is-not-empty) {
+    ~ label, ~ .error-field {
+      display: block;
+      color: $mui-danger-color;
+    }
+  }
+}
+
+.inputfield > input:not(:focus)._invalid,
+.inputfield > textarea:not(:focus)._invalid {
+
+}
+
+.inputfield:not(.inputfield--float-label) > input:invalid:not(:focus),
+.inputfield:not(.inputfield--float-label) > textarea:invalid:not(:focus),
+.inputfield:not(.inputfield--float-label) > input:not(:focus)._invalid,
+.inputfield:not(.inputfield--float-label) > textarea:not(:focus)._invalid {
+  // Set label color to danger color for dirty, empty fields
+  &:required.is-empty.is-dirty ~ label, ~ .error-field  {
+    display: block;
+    color: $mui-danger-color;
+  }
+}
+
+.inputfield._ok::before {
+  @include form-ok();
+}
+
+
+.typo-note {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+
