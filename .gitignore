@@ -68,3 +68,7 @@ ENV/
 
 # idea
 .idea/
+
+# generate file
+*public/vendor.*
+*public/baka.*
