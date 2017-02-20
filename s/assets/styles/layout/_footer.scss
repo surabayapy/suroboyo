@@ -20,9 +20,9 @@
   margin: 0px;
   list-style: none;
   &.md {
-    font-size: 28px;
+    font-size: 15px;
     @media (max-width: $mui-screen-sm-max) {
-      font-size: 18px;
+      font-size: 8px;
     }
   }
 }

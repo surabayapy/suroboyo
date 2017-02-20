@@ -69,15 +69,17 @@
 
 .logo-text {
 	&.md {
-		width: 65%;
+		width: 40%;
 		height: auto;
 	}
 	&.sm {
-		width: 35%;
+		width: 15%;
 		height: auto;
 	}
 	&.lg {
 		width: 100%;
 		height: auto;
 	}
+    margin-bottom: 118px;
+    margin-top: 40px
 }
