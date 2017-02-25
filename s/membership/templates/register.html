@@ -1,0 +1,44 @@
+-inherit file="s:sby/templates/_base.html"
+
+-def title()
+  ${title}
+
+
+<%self.widgets:panel>
+  .row
+    .col-md-6.col-xs-12.float-right
+      .register-bg style="padding:10px;margin-top:65px;text-align:center;"
+        img src="/static/img/register-bg.png" style="width:70%;"
+
+    .col-md-6.col-xs-12
+      h2.red.title
+        span = _(u"Join us, Surabaya.py Community")
+      span.divider style="margin-bottom: 12px;"
+      ${h.tags.form(
+        action or request.url,
+        class_="_ajax %s" % ('readonly' if readonly else ''),
+        autocomplete="off",
+        hidden_fields=[('csrf_token', request.session.get_csrf_token())])}
+      .row
+        .col-md-6.col-xs-12
+          <%self.widgets:textfield required='True' name="first" label='First Name' placeholder='First name' />
+        .col-md-6.col-xs-12
+          <%self.widgets:textfield required='True' name="last" label='Last Name' placeholder='Surname' />
+
+      <%self.widgets:textfield required='True' name="email" label='Email' placeholder='Email address' />
+      <%self.widgets:textfield required='True' name="confirm_email" label='Confirm Email' placeholder='Re-enter email address' />
+      <%self.widgets:textfield type="password" required='True' name="password" label='Password' placeholder='New Password' />
+
+      p.foot_note style="font-size: 10px;line-height: 12px;font-weight: 400;letter-spacing: 0.2px;color: #a6a6a6;"
+        = _("By clicking Sign up, you are agreeing to our ")
+        a href="#" = _("Terms of Service ")
+        = _(" and confirm that you have read our ")
+        a href="#" = _("Community Guidelines")
+        = _(", including our ")
+        a href="#" = _("Cookies Use Policy.")
+
+      / a href="index.html" title="" class="btn btn--primary" = _("Sign up")
+      ${h.tags.submit('signup', _(u"Sign up"), class_="btn btn--primary") if not readonly else ''}
+      ${h.tags.end_form()}
+
+</%self.widgets:panel>

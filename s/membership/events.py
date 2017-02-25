@@ -1,6 +1,6 @@
 """
  # Copyright (c) 2017 Boolein Integer Indonesia, PT.
- # suryakencana 2/16/17 @author nanang.suryadi@boolein.id
+ # suryakencana 2/19/17 @author nanang.suryadi@boolein.id
  #
  # You are hereby granted a non-exclusive, worldwide, royalty-free license to
  # use, copy, modify, and distribute this software in source code or binary
@@ -20,18 +20,34 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE
  # 
- # views
+ # events
 """
 
 
-from baka.router import route
+class _UserMixinEvent(object):
+    def __init__(self, request, user):
+        self.request = request
+        self.user = user
 
 
-@route('/', name='home', renderer='s:sby/templates/comingsoon.html')
-def home_index(request):
-    _ = request
-    return {'name': __name__}
+class ActivationEvent(_UserMixinEvent):
+    pass
 
 
-def includeme(config):
-    config.scan()
+class LoginEvent(_UserMixinEvent):
+    pass
+
+
+class LogoutEvent(object):
+    def __init__(self, request):
+        self.request = request
+
+
+class RegistrationEvent(object):
+    def __init__(self, request, user):
+        self.request = request
+        self.user = user
+
+
+class PasswordResetEvent(_UserMixinEvent):
+    pass

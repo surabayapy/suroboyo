@@ -73,3 +73,6 @@ ENV/
 *public/vendor.*
 *public/baka.*.css
 *public/baka.*.js
+*public/kara.ui.*.js
+*redis/
+*.sass-cache

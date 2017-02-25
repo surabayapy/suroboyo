@@ -1,12 +1,12 @@
 css-vendor:
     filters: scss,cssmin
     depends: '**/*.scss'
-    output: ../public/vendor.%(version)s.css
+    output: s:public/vendor.%(version)s.css
     contents: styles/app.scss
 
 js-vendor:
     filters: jsmin
-    output: ../public/vendor.%(version)s.js
+    output: s:public/vendor.%(version)s.js
     contents:
       - javascripts/pace.js
       - javascripts/moment-with-locales.js
@@ -17,11 +17,20 @@ js-vendor:
       - javascripts/lodash.js
       - javascripts/materialize.js
 
+kara-ui:
+    filters: jsmin
+    output: s:public/kara.ui.%(version)s.js
+    contents:
+      - jeasyui/js/jquery.easyui.min.js
+      - jeasyui/js/date-format.js
+      - jeasyui/js/jquery.portal.js
+      - jeasyui/js/ext/*.js
+
 baka-js:
     config:
       CLOSURE_COMPRESSOR_OPTIMIZATION: SIMPLE_OPTIMIZATIONS
     filters: closure_js
-    output: ../public/baka.%(version)s.js
+    output: s:public/baka.%(version)s.js
     contents:
       - javascripts/baka/class.js
       - javascripts/baka/baka.js

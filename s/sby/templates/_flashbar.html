@@ -1,0 +1,11 @@
+--- flash_types = [
+      ('error', 'danger'),
+      ('info', 'info'),
+      ('warning', 'warning'),
+      ('success', 'success'),
+    ]
+.flashbar
+  -for flashkey, classname in flash_types:
+    -for message in request.session.pop_flash(flashkey):
+      .notice.${ classname }.alert-dismissable role="alert"
+        p: ${ message | n}

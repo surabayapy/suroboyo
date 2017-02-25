@@ -6,7 +6,7 @@ html lang="${request.locale_name}"
     meta charset="utf-8"
     title
       == _("Surabaya.py")
-      == self.title()
+      == self.head_title()
 
     meta name="viewport" content="width=device-width"
     meta name="description" content="Surabaya.py adalah komunitas python di surabaya"
@@ -30,14 +30,31 @@ html lang="${request.locale_name}"
       ${h.tags.stylesheet_link(static(url))}
 
     -block css
+    -if ga_tracking_id:
+      <!-- Google Analytics -->
+      <script async src='//www.google-analytics.com/analytics.js'></script>
+      script
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', 'UA-${ga_tracking_id}', '${ga_cookie_domain}');
+        ga('send', 'pageview');
 
   body
     -include _navigation.html
+    -include _flashbar.html
+
     .container
       ${self.body()}
 
     -include _footer.html
 
+    -for url in request.web_env['js-vendor'].urls():
+      ${h.tags.javascript_link(static(url))}
 
--def title()
+    -for url in request.web_env['kara-ui'].urls():
+      ${h.tags.javascript_link(static(url))}
+
+    -for url in request.web_env['baka-js'].urls():
+      ${h.tags.javascript_link(static(url))}
+
+-def head_title()
   = ''

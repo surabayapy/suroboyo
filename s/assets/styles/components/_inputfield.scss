@@ -7,7 +7,7 @@ $xFormLabelLineHeight: floor($mui-label-font-size * 1.75);
   margin-bottom: $mui-form-group-margin-bottom;
   position: relative;
 
-  > label {
+  > span > label {
     @include form-label();
   }
 
@@ -19,7 +19,7 @@ $xFormLabelLineHeight: floor($mui-label-font-size * 1.75);
   > textarea {
     display: block;
 
-    &:focus ~ label {
+    &:focus ~ span > label {
       color: $mui-input-border-color-focus;
     }  
   }
@@ -112,7 +112,7 @@ $xFormLabelLineHeight: floor($mui-label-font-size * 1.75);
   &:required.is-not-empty,
   &:required[value]:not([value=""]):not(.is-empty):not(.is-not-empty),
   &:required:not(:empty):not(.is-empty):not(.is-not-empty) {
-    ~ label, ~ .error-field {
+    ~ span > label, ~ .error-field {
       display: block;
       color: $mui-danger-color;
     }
@@ -129,7 +129,7 @@ $xFormLabelLineHeight: floor($mui-label-font-size * 1.75);
 .inputfield:not(.inputfield--float-label) > input:not(:focus)._invalid,
 .inputfield:not(.inputfield--float-label) > textarea:not(:focus)._invalid {
   // Set label color to danger color for dirty, empty fields
-  &:required.is-empty.is-dirty ~ label, ~ .error-field  {
+  &:required.is-empty.is-dirty ~ span > label, ~ .error-field  {
     display: block;
     color: $mui-danger-color;
   }

@@ -24,6 +24,8 @@ INSTALL_REQUIRES = [
     'pyramid',
     'pyramid-debugtoolbar',
     'pyramid-mako',
+    'pyramid_mailer',
+    'apscheduler'
 ]
 EXTRAS_REQUIRE = {
     'dev': ['check-manifest'],

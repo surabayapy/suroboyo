@@ -43,6 +43,11 @@ kara.app = Class.extend({
             e.preventDefault();
             kara.ui.forms.submit($(this).closest('form._ajax'));
         });
+
+        baka.d.on('click', '.flashbar', function(e){
+            e.preventDefault();
+            $('.flashbar').html('');
+        });
     }
 });
 $(document).ready(function(){new kara.app()});

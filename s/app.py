@@ -16,4 +16,6 @@ def create_app(global_config, **settings):
 
 def includeme(config):
     config.include('baka.app')
+    config.include('.schedulers')
+    config.include('.membership')
     config.include('.sby')

@@ -1,7 +1,9 @@
 // Normalizer
 @import
 "vendors/normalize",
-"vendors/fontawesome/font-awesome";
+"vendors/fontawesome/font-awesome",
+"vendors/pace",
+"vendors/spinner";
 
 // Core variables and mixins
 @import
@@ -32,7 +34,8 @@
 @import
 "layout/grid",
 "layout/navigation",
-"layout/footer";
+"layout/footer",
+"layout/flash";
 
 
 // Pages

@@ -1,6 +1,6 @@
 """
  # Copyright (c) 2017 Boolein Integer Indonesia, PT.
- # suryakencana 2/16/17 @author nanang.suryadi@boolein.id
+ # suryakencana 2/19/17 @author nanang.suryadi@boolein.id
  #
  # You are hereby granted a non-exclusive, worldwide, royalty-free license to
  # use, copy, modify, and distribute this software in source code or binary
@@ -20,18 +20,26 @@
  # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
  # DEALINGS IN THE SOFTWARE
  # 
- # views
+ # helper
 """
+import binascii
+import hashlib
+import os
+import random
+import string
+from baka._compat import text_type
 
 
-from baka.router import route
+def generate_random_string(length=12):
+    """Generate a random ascii string of the requested length."""
+    msg = hashlib.sha256()
+    word = ''
+    for _ in range(length):
+        word += random.choice(string.ascii_letters)
+    msg.update(word.encode('ascii'))
+    return text_type(msg.hexdigest()[:length])
 
 
-@route('/', name='home', renderer='s:sby/templates/comingsoon.html')
-def home_index(request):
-    _ = request
-    return {'name': __name__}
-
-
-def includeme(config):
-    config.scan()
+def _token():
+    """Return a random string suitable for use in an API token."""
+    return binascii.hexlify(os.urandom(16))
