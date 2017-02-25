@@ -16,12 +16,14 @@ scheduler = BackgroundScheduler()
 
 
 def start_scheduler(settings):
-    assert settings['scheduler.store'] in ('redis', 'sqlalchemy', 'rethinkdb'),\
+    assert settings['scheduler.store'] in ('redis', 'sqlalchemy', 'rethinkdb'), \
         'Uknown job store, must by one of redis or sqlalchemy'
 
     if settings['scheduler.store'] == 'redis':
         jobstores = {
-            'default': RedisJobStore(db=settings['scheduler.db'])
+            'default': RedisJobStore(
+                host=settings['scheduler.host'],
+                db=settings['scheduler.db'])
         }
     else:
         jobstores = {
