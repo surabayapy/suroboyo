@@ -27,6 +27,7 @@ from ..forms.user import email_validator
 from baka import forms
 import colander
 from baka.i18n import translate as _
+from s.membership import helper
 
 LOG = logging.getLogger(__name__)
 
@@ -73,7 +74,10 @@ class _RegisterForm(forms.BaseForm):
 
         LOG.debug(user)
 
-        user.username = '::'.join([self._controls.get('first'), self._controls.get('last')])
+        user.username = '.'.join([
+            self._controls.get('first'),
+            self._controls.get('last'),
+            helper.generate_random_string(8)])
         user.email = self._controls.get('email')
         user.status = u'member'
         if self._controls.get('password'):

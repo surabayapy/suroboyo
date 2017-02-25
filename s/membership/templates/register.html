@@ -1,7 +1,7 @@
 -inherit file="s:sby/templates/_base.html"
 
--def title()
-  ${title}
+-def page_title()
+  ${title or ''}
 
 
 <%self.widgets:panel>

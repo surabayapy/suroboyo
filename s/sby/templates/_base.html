@@ -5,8 +5,8 @@ html lang="${request.locale_name}"
   head
     meta charset="utf-8"
     title
-      == _("Surabaya.py")
-      == self.head_title()
+      = '{0}•{1}•'.format(self.page_title(), _("Surabaya.py"))
+
 
     meta name="viewport" content="width=device-width"
     meta name="description" content="Surabaya.py adalah komunitas python di surabaya"
@@ -19,7 +19,7 @@ html lang="${request.locale_name}"
     meta property="og:site_name" content="Surabaya.py"
     meta property="og:url" content="http://surabaya.python.or.id/"
     meta property="og:type" content="website"
-    meta property="og:title" content="Surabaya.py ${self.title()}"
+    meta property="og:title" content="Surabaya.py ${self.page_title()}"
     meta property="og:description" content="Surabaya.py adalah komunitas python di surabaya"
     meta property="og:image" content="http://surabaya.python.or.id/static/img/logo-text.jpg"
 
@@ -56,5 +56,5 @@ html lang="${request.locale_name}"
     -for url in request.web_env['baka-js'].urls():
       ${h.tags.javascript_link(static(url))}
 
--def head_title()
+-def page_title()
   = ''
