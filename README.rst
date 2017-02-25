@@ -1,1 +1,0 @@
-garasu_model README

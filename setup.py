@@ -36,7 +36,7 @@ ENTRY_POINTS = """\
       main = s:main
       """
 
-with open('README.rst', encoding='utf-8') as fp:
+with open('README.md', encoding='utf-8') as fp:
     LONGDESC = fp.read()
 
 
