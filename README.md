@@ -17,7 +17,7 @@
 > ― Sukarno
 
 > “ Kurang cerdas dapat diperbaiki dengan belajar, kurang cakap dapat dihilangkan dengan pengalaman. Namun tidak jujur sulit diperbaiki. ”
-> - Bung Hatta
+> ― Bung Hatta
 
 > “ Keberanian bukan berarti tidak takut, keberanian berarti menaklukan ketakutan. ”
-> - Bung Hatta
+> ― Bung Hatta
