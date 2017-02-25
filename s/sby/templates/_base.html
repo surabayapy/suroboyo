@@ -19,7 +19,7 @@ html lang="${request.locale_name}"
     meta property="og:site_name" content="Surabaya.py"
     meta property="og:url" content="http://surabaya.python.or.id/"
     meta property="og:type" content="website"
-    meta property="og:title" content="Surabaya.py ${self.page_title()}"
+    meta property="og:title" content=${'{0}•{1}•'.format(self.page_title(), _("Surabaya.py"))}
     meta property="og:description" content="Surabaya.py adalah komunitas python di surabaya"
     meta property="og:image" content="http://surabaya.python.or.id/static/img/logo-text.jpg"
 
