@@ -154,8 +154,7 @@ def activation_email(request, user):
             [text_type(user.pid),
              user.activation.code]))
     # link = '-'.join(['register.activate', text_type(user.pid), user.activation.code])
-    emailtext = ("Please validate your email and activate your account by "
-                 "visiting: {link}")
+    emailtext = _("Please validate your email and activate your account by visiting: {link}")
     body = emailtext.format(link=link)
     return {
         "request": request,
