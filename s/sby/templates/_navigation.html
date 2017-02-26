@@ -3,14 +3,14 @@
     .ui-flex
       .f-west
         .left
-          a href="#"
+          a href="${request.route_url('home')}"
             img.logo.inline-box src="/static/img/logo-sby.png"
 
       .f-east
         .nav-li
           .left
             .pad-nav
-              a.nav-a href="#" title="Profile"
+              a.nav-a href="${request.route_url('home')}" title="Profile"
                 img.box.inline-box.img src="/static/img/mark-zi.jpg" alt="" id="profile_pic_header_1502087947":
                 span Surabaya.py
               a.nav-a href="${request.route_url('_register_view')}" title="Register"
