@@ -21,13 +21,13 @@
         hidden_fields=[('csrf_token', request.session.get_csrf_token())])}
       .row
         .col-md-6.col-xs-12
-          <%self.widgets:textfield required='True' name="first" label='First Name' placeholder='First name' />
+          <%self.widgets:textfield required='True' name="first" label='${_("First Name")}' placeholder='${_("First Name")}' />
         .col-md-6.col-xs-12
-          <%self.widgets:textfield required='True' name="last" label='Last Name' placeholder='Surname' />
+          <%self.widgets:textfield required='True' name="last" label='${_("Last Name")}' placeholder='${_("Surname")}' />
 
-      <%self.widgets:textfield required='True' name="email" label='Email' placeholder='Email address' />
-      <%self.widgets:textfield required='True' name="confirm_email" label='Confirm Email' placeholder='Re-enter email address' />
-      <%self.widgets:textfield type="password" required='True' name="password" label='Password' placeholder='New Password' />
+      <%self.widgets:textfield required='True' name="email" label='${_("Email")}' placeholder='${_("Email Address")}' />
+      <%self.widgets:textfield required='True' name="confirm_email" label='${_("Confirm Email")}' placeholder='${_("Re-enter email address")}' />
+      <%self.widgets:textfield type="password" required='True' name="password" label='${_("Password")}' placeholder='${_("New Password")}' />
 
       p.foot_note style="font-size: 10px;line-height: 12px;font-weight: 400;letter-spacing: 0.2px;color: #a6a6a6;"
         = _("By clicking Sign up, you are agreeing to our ")
