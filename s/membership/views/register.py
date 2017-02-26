@@ -25,11 +25,12 @@
 import logging
 
 from ... import mailer
-from ..events import RegistrationEvent
+from ..events import RegistrationEvent, ActivationEvent
 from ..forms import register
 from baka._compat import text_type
 from baka.router import route
 from baka.i18n import translate as _
+from pyramid import httpexceptions
 
 LOG = logging.getLogger(__name__)
 
@@ -65,6 +66,7 @@ def _register_view(request):
 
         request.db.flush()
 
+        LOG.debug('')
         # Send the activation email
         message = activation_email(request, user)
         mailer.schedule_email_register(**message)
@@ -89,14 +91,55 @@ def _register_view(request):
             'errors': form.errors
         }
 
-        # return {
-        #     'error_message': True,
-        #     'errors': {
-        #         'first': 'Required',
-        #         'email': 'Required',
-        #         'confirm_email': 'Fill Email Required',
-        #     }
-        # }
+
+@route(
+    '/register.activate.{code:.*}',
+    request_method='GET',
+    renderer='json')
+def register_activate(request):
+    pid, code = validasi_activation(
+        request.matchdict['code'])
+
+    # LOG.debug((pid, code))
+    # link = request.route_url(
+    #     'register_activate',
+    #     code='-'.join(
+    #         [text_type(pid),
+    #          code]))
+    # LOG.debug(link)
+    if (pid and code) is not None:
+        # cek exist code activation dan cari user berdasarkan nya
+        Activation = request.find_model('membership.activation')
+        activation = Activation.get_by_code(request.db, code)
+        if activation is None:
+            request.session.flash(_(
+                "We didn't recognize that activation link. "
+                "Perhaps you've already activated your account? "
+                'If so, try <a href="{url}">signing in</a> using the username '
+                'and password that you provided.').format(
+                url=request.route_url('_register_view')),
+                'error')
+            return httpexceptions.HTTPFound(
+                location=request.route_url('home'))
+
+        User = request.find_model('membership.user')
+        user = User.get_by_activation(request.db, activation)
+        if user is None or user.pid != pid:
+            raise httpexceptions.HTTPNotFound()
+
+        user.activate()
+        request.session.flash(_(
+            'Your account has been activated! '
+            'You can now <a href="{url}">sign in</a> using the password you '
+            'provided.').format(url=request.route_url('_register_view')),
+                              'success')
+
+        request.registry.notify(ActivationEvent(request, user))
+
+        return httpexceptions.HTTPFound(
+            location=request.route_url('home'))
+
+    return httpexceptions.HTTPNotFound()
 
 
 def activation_email(request, user):
@@ -105,8 +148,12 @@ def activation_email(request, user):
     :rtype: dict
 
     """
-    # link = request.route_url('activate', id=user.id, code=user.activation.code)
-    link = '-'.join(['register.activate', text_type(user.pid), user.activation.code])
+    link = request.route_url(
+        'register_activate',
+        code='-'.join(
+            [text_type(user.pid),
+             user.activation.code]))
+    # link = '-'.join(['register.activate', text_type(user.pid), user.activation.code])
     emailtext = ("Please validate your email and activate your account by "
                  "visiting: {link}")
     body = emailtext.format(link=link)
@@ -116,6 +163,16 @@ def activation_email(request, user):
         "recipients": [user.email],
         "body": body
     }
+
+
+def validasi_activation(uri):
+    code = pid = None
+    splitter = uri.split('-')
+
+    if len(splitter) > 1:
+        pid, code = splitter[:2]
+
+    return pid, code
 
 
 def includeme(config):

@@ -2,10 +2,11 @@
 ![alt text](https://github.com/surabaya-py/suroboyo/blob/master/s/public/img/logo-text.png "Surabaya.py")
 
 ### TODO:
-    1. Halaman Aktivasi code link email
-    2. Login admin panel
-    3. Administrasi panel/ backend untuk daftar member
-    4. Baka•CMS
+    1. Halaman Aktivasi code link email [x]
+    2. Bilingual ID | EN
+    3. Login admin panel
+    4. Administrasi panel/ backend untuk daftar member
+    5. Baka•CMS
      
 
 ### Saran dan Kontribusi

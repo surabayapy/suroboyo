@@ -56,4 +56,11 @@ setup(name=NAME,
       extras_require=EXTRAS_REQUIRE,
       entry_points=ENTRY_POINTS,
       packages=find_packages(include=['s', 's.*']),
+      message_extractors={"s": [
+          ("**.py", "python", None),
+          ('**.html', 'jinja2', {'input_encoding': 'utf-8'}),
+          ('**.jinja2', 'jinja2', {'input_encoding': 'utf-8'}),
+          ('static/**', 'ignore', None)
+      ]
+      },
       zip_safe=False)
