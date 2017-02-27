@@ -1,0 +1,197 @@
+# Indonesian translations for s.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the s project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: s 0.1.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-02-27 14:28+0700\n"
+"PO-Revision-Date: 2017-02-27 14:28+0700\n"
+"Last-Translator: \n"
+"Language: id\n"
+"Language-Team: id <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+"X-Generator: Poedit 1.8.9\n"
+
+#: s/membership/models.py:110
+msgid "Employee"
+msgstr "Karyawan"
+
+#: s/membership/models.py:111
+msgid "Student"
+msgstr "Pelajar"
+
+#: s/membership/models.py:112
+msgid "Member"
+msgstr "Anggota"
+
+#: s/membership/forms/register.py:43
+msgid "Email and confirm is not equal"
+msgstr "Konfirmasi email tidak sama"
+
+#: s/membership/forms/user.py:43
+msgid "User with the same username exists"
+msgstr "Username telah digunakan"
+
+#: s/membership/forms/user.py:58
+msgid "User with the same email exists"
+msgstr "Email telah digunakan"
+
+#: s/membership/forms/user.py:73
+msgid "User for this employee already exists"
+msgstr "User telah digunakan"
+
+#: s/membership/forms/user.py:86
+msgid "Password and confirm is not equal"
+msgstr "Konfirmasi password tidak sama"
+
+#: s/membership/templates/register.html:15
+msgid "Join us, Surabaya.py Community"
+msgstr "Bergabung lah dengan Komunitas Surabaya.py"
+
+#: s/membership/templates/register.html:24
+msgid "First Name"
+msgstr "Nama Depan"
+
+#: s/membership/templates/register.html:26
+msgid "Surname"
+msgstr "Nama belakang"
+
+#: s/membership/templates/register.html:26
+msgid "Last Name"
+msgstr "Nama Belakang"
+
+#: s/membership/templates/register.html:28
+msgid "Email Address"
+msgstr "Alamat Email"
+
+#: s/membership/templates/register.html:28
+msgid "Email"
+msgstr "Email"
+
+#: s/membership/templates/register.html:29
+msgid "Re-enter email address"
+msgstr "Silahkan masukkan alamat email Anda"
+
+#: s/membership/templates/register.html:29
+msgid "Confirm Email"
+msgstr "Email konfirmasi"
+
+#: s/membership/templates/register.html:30
+msgid "New Password"
+msgstr "Kata sandi baru"
+
+#: s/membership/templates/register.html:30
+msgid "Password"
+msgstr "Kata sandi"
+
+#: s/membership/templates/register.html:33
+msgid "By clicking Sign up, you are agreeing to our "
+msgstr "Dengan mengklik Daftar, Anda menyetujui "
+
+#: s/membership/templates/register.html:34
+msgid "Terms of Service "
+msgstr "Ketentuan Layanan kami "
+
+#: s/membership/templates/register.html:35
+msgid " and confirm that you have read our "
+msgstr " dan pastikan bahwa Anda telah membaca "
+
+#: s/membership/templates/register.html:36
+msgid "Community Guidelines"
+msgstr "Pedoman Komunitas kami"
+
+#: s/membership/templates/register.html:37
+msgid ", including our "
+msgstr ", termasuk "
+
+#: s/membership/templates/register.html:38
+msgid "Cookies Use Policy."
+msgstr "Ketentuan penggunaan Cookies kita."
+
+#: s/membership/templates/register.html:41
+msgid "Sign up"
+msgstr "Daftar"
+
+#: s/membership/views/register.py:74
+msgid ""
+"Thank you for join Surabaya.py community! We've sent you an email with an "
+"activation link, before you can sign in <strong>please check your email and "
+"open the link to activate your account</strong>."
+msgstr ""
+"Terima kasih untuk bergabung dengan komunitas Surabaya.py! Kami telah "
+"mengirimkan email dengan link aktivasi, sebelum Anda dapat sign in <strong> "
+"silahkan cek email Anda dan membuka link untuk mengaktifkan account Anda </ "
+"strong>."
+
+#: s/membership/views/register.py:85
+msgid "Saved"
+msgstr "Simpan"
+
+#: s/membership/views/register.py:90
+msgid "Please, check errors"
+msgstr "Cek kembali kesalahan"
+
+#: s/membership/views/register.py:115
+msgid ""
+"We didn't recognize that activation link. Perhaps you've already activated "
+"your account? If so, try <a href=\"{url}\">signing in</a> using the username "
+"and password that you provided."
+msgstr ""
+"Kami tidak menyadari bahwa link aktivasi. Mungkin Anda sudah mengaktifkan "
+"akun? Jika demikian, coba <a  href=\"{url}\">Sign in </a> menggunakan "
+"username dan password yang Anda berikan."
+
+#: s/membership/views/register.py:131
+msgid ""
+"Your account has been activated! You can now <a href=\"{url}\">sign in</a> "
+"using the password you provided."
+msgstr ""
+"Akun Anda telah diaktifkan! Anda sekarang dapat mengakses <a href=\"{url}\"> "
+"Sign in </a> menggunakan password yang Anda berikan."
+
+#: s/membership/views/register.py:157
+msgid "Please validate your email and activate your account by visiting: {link}"
+msgstr ""
+"Email anda menunggu verifikasi. Mohon aktifkan akun Anda. Ingat untuk "
+"mengecek spam folder anda jika email tidak masuk ke Inbox email anda."
+
+#: s/membership/views/register.py:161
+msgid "Please activate your account"
+msgstr "Aktifkan akun anda"
+
+#: s/sby/templates/_base.html:22
+msgid "Surabaya.py"
+msgstr "Surabaya.py"
+
+#: s/sby/templates/_footer.html:12
+msgid "Powered by"
+msgstr "dipersembahkan oleh"
+
+#: s/sby/templates/_navigation.html:22
+msgid "Join Us!"
+msgstr "Bergabunglah!"
+
+#: s/sby/templates/comingsoon.html:4 s/sby/templates/comingsoon.html:11
+msgid "COMING SOON!!"
+msgstr "SEGERA HADIR!!"
+
+#: s/sby/templates/comingsoon.html:14
+msgid "Look forward to our surabaya.py python surabaya community!"
+msgstr "Nantikan kami, surabaya.py komunitas python surabaya!"
+
+#: s/sby/templates/comingsoon.html:35
+msgid "Contact Us"
+msgstr "Hubungi Kami"
+
+#~ msgid "Nantikan kami, surabaya.py komunitas python surabaya!"
+#~ msgstr "Look forward to our surabaya.py python surabaya community!"
+
+#~ msgid "Hubungi Kami"
+#~ msgstr "Contact Us"

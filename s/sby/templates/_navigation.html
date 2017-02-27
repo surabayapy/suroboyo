@@ -5,6 +5,11 @@
         .left
           a href="${request.route_url('home')}"
             img.logo.inline-box src="/static/img/logo-sby.png"
+        .pad-nav style="margin-left: 6px;"
+          a.nav-a href="${request.route_url('locale', language='en')}"
+            span : EN
+          a.nav-a href="${request.route_url('locale', language='id')}"
+            span : ID
 
       .f-east
         .nav-li
@@ -14,4 +19,4 @@
                 img.box.inline-box.img src="/static/img/mark-zi.jpg" alt="" id="profile_pic_header_1502087947":
                 span Surabaya.py
               a.nav-a href="${request.route_url('_register_view')}" title="Register"
-                span Join Us!
+                span : ${_(u'Join Us!') | n}

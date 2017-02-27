@@ -1,0 +1,179 @@
+# Translations template for s.
+# Copyright (C) 2017 ORGANIZATION
+# This file is distributed under the same license as the s project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: s 0.1.1\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2017-02-27 14:28+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.3.4\n"
+
+#: s/membership/models.py:110
+msgid "Employee"
+msgstr ""
+
+#: s/membership/models.py:111
+msgid "Student"
+msgstr ""
+
+#: s/membership/models.py:112
+msgid "Member"
+msgstr ""
+
+#: s/membership/forms/register.py:43
+msgid "Email and confirm is not equal"
+msgstr ""
+
+#: s/membership/forms/user.py:43
+msgid "User with the same username exists"
+msgstr ""
+
+#: s/membership/forms/user.py:58
+msgid "User with the same email exists"
+msgstr ""
+
+#: s/membership/forms/user.py:73
+msgid "User for this employee already exists"
+msgstr ""
+
+#: s/membership/forms/user.py:86
+msgid "Password and confirm is not equal"
+msgstr ""
+
+#: s/membership/templates/register.html:15
+msgid "Join us, Surabaya.py Community"
+msgstr ""
+
+#: s/membership/templates/register.html:24
+msgid "First Name"
+msgstr ""
+
+#: s/membership/templates/register.html:26
+msgid "Surname"
+msgstr ""
+
+#: s/membership/templates/register.html:26
+msgid "Last Name"
+msgstr ""
+
+#: s/membership/templates/register.html:28
+msgid "Email Address"
+msgstr ""
+
+#: s/membership/templates/register.html:28
+msgid "Email"
+msgstr ""
+
+#: s/membership/templates/register.html:29
+msgid "Re-enter email address"
+msgstr ""
+
+#: s/membership/templates/register.html:29
+msgid "Confirm Email"
+msgstr ""
+
+#: s/membership/templates/register.html:30
+msgid "New Password"
+msgstr ""
+
+#: s/membership/templates/register.html:30
+msgid "Password"
+msgstr ""
+
+#: s/membership/templates/register.html:33
+msgid "By clicking Sign up, you are agreeing to our "
+msgstr ""
+
+#: s/membership/templates/register.html:34
+msgid "Terms of Service "
+msgstr ""
+
+#: s/membership/templates/register.html:35
+msgid " and confirm that you have read our "
+msgstr ""
+
+#: s/membership/templates/register.html:36
+msgid "Community Guidelines"
+msgstr ""
+
+#: s/membership/templates/register.html:37
+msgid ", including our "
+msgstr ""
+
+#: s/membership/templates/register.html:38
+msgid "Cookies Use Policy."
+msgstr ""
+
+#: s/membership/templates/register.html:41
+msgid "Sign up"
+msgstr ""
+
+#: s/membership/views/register.py:74
+msgid ""
+"Thank you for join Surabaya.py community! We've sent you an email with an "
+"activation link, before you can sign in <strong>please check your email and "
+"open the link to activate your account</strong>."
+msgstr ""
+
+#: s/membership/views/register.py:85
+msgid "Saved"
+msgstr ""
+
+#: s/membership/views/register.py:90
+msgid "Please, check errors"
+msgstr ""
+
+#: s/membership/views/register.py:115
+msgid ""
+"We didn't recognize that activation link. Perhaps you've already activated "
+"your account? If so, try <a href=\"{url}\">signing in</a> using the username "
+"and password that you provided."
+msgstr ""
+
+#: s/membership/views/register.py:131
+msgid ""
+"Your account has been activated! You can now <a href=\"{url}\">sign in</a> "
+"using the password you provided."
+msgstr ""
+
+#: s/membership/views/register.py:157
+msgid "Please validate your email and activate your account by visiting: {link}"
+msgstr ""
+
+#: s/membership/views/register.py:161
+msgid "Please activate your account"
+msgstr ""
+
+#: s/sby/templates/_base.html:22
+msgid "Surabaya.py"
+msgstr ""
+
+#: s/sby/templates/_footer.html:12
+msgid "Powered by"
+msgstr ""
+
+#: s/sby/templates/_navigation.html:22
+msgid "Join Us!"
+msgstr ""
+
+#: s/sby/templates/comingsoon.html:4 s/sby/templates/comingsoon.html:11
+msgid "COMING SOON!!"
+msgstr ""
+
+#: s/sby/templates/comingsoon.html:14
+msgid "Look forward to our surabaya.py python surabaya community!"
+msgstr ""
+
+#: s/sby/templates/comingsoon.html:35
+msgid "Contact Us"
+msgstr ""
+

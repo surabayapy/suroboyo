@@ -7,13 +7,13 @@
 <%self.widgets:panel>
   .row
     .col-md-6.col-xs-12.float-right
-      .register-bg style="padding:10px;margin-top:65px;text-align:center;"
-        img src="/static/img/register-bg.png" style="width:70%;"
+      .register-bg
+        img src="/static/img/register-bg.png"
 
     .col-md-6.col-xs-12
       h2.red.title
-        span = _(u"Join us, Surabaya.py Community")
-      span.divider style="margin-bottom: 12px;"
+        span ${_(u'Join us, Surabaya.py Community')}
+      span.divider.mb-12
       ${h.tags.form(
         action or request.url,
         class_="_ajax %s" % ('readonly' if readonly else ''),
@@ -21,24 +21,24 @@
         hidden_fields=[('csrf_token', request.session.get_csrf_token())])}
       .row
         .col-md-6.col-xs-12
-          <%self.widgets:textfield required='True' name="first" label='${_("First Name")}' placeholder='${_("First Name")}' />
+          <%self.widgets:textfield required='True' name="first" label="${_(u'First Name')}" placeholder="${_(u'First Name')}" />
         .col-md-6.col-xs-12
-          <%self.widgets:textfield required='True' name="last" label='${_("Last Name")}' placeholder='${_("Surname")}' />
+          <%self.widgets:textfield required='True' name="last" label="${_(u'Last Name')}" placeholder="${_(u'Surname')}" />
 
-      <%self.widgets:textfield required='True' name="email" label='${_("Email")}' placeholder='${_("Email Address")}' />
-      <%self.widgets:textfield required='True' name="confirm_email" label='${_("Confirm Email")}' placeholder='${_("Re-enter email address")}' />
-      <%self.widgets:textfield type="password" required='True' name="password" label='${_("Password")}' placeholder='${_("New Password")}' />
+      <%self.widgets:textfield required='True' name="email" label="${_(u'Email')}" placeholder="${_(u'Email Address')}" />
+      <%self.widgets:textfield required='True' name="confirm_email" label="${_(u'Confirm Email')}" placeholder="${_(u'Re-enter email address')}" />
+      <%self.widgets:textfield type="password" required='True' name="password" label="${_(u'Password')}" placeholder="${_(u'New Password')}" />
 
-      p.foot_note style="font-size: 10px;line-height: 12px;font-weight: 400;letter-spacing: 0.2px;color: #a6a6a6;"
-        = _("By clicking Sign up, you are agreeing to our ")
-        a href="#" = _("Terms of Service ")
-        = _(" and confirm that you have read our ")
-        a href="#" = _("Community Guidelines")
-        = _(", including our ")
-        a href="#" = _("Cookies Use Policy.")
+      p.foot_note
+        ${_(u'By clicking Sign up, you are agreeing to our ')}
+        a href="#": ${_(u'Terms of Service ')}
+        ${_(u' and confirm that you have read our ')}
+        a href="#": ${_(u'Community Guidelines')}
+        ${_(u', including our ')}
+        a href="#": ${_(u'Cookies Use Policy.')}
 
-      / a href="index.html" title="" class="btn btn--primary" = _("Sign up")
-      ${h.tags.submit('signup', _(u"Sign up"), class_="btn btn--primary") if not readonly else ''}
+      / a href="index.html" title="" class="btn btn--primary" = _(u'Sign up')
+      ${h.tags.submit('signup', _(u'Sign up'), class_="btn btn--primary") if not readonly else ''}
       ${h.tags.end_form()}
 
 </%self.widgets:panel>

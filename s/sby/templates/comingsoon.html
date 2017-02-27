@@ -1,17 +1,17 @@
 -inherit _base.html
 
 -def page_title()
-  == "COMING SOON!!"
+  ${_(u'COMING SOON!!')}
 
 .row
   <%self.widgets:panel>
     .col-sm-12.col-xs-12
       .coming-soon-page
         h2.red.title
-          span COMING SOON!!
+          span ${_(u'COMING SOON!!')}
         img.logo-text.md src="/static/img/logo-text.png"
         span.divider
-        p "Nantikan kami, surabaya.py komunitas python surabaya!"
+        p: ${_(u'Look forward to our surabaya.py python surabaya community!')}
         ul.site-footer-links.md
           li
             a href="http://t.me/surabayadotpy"
@@ -32,5 +32,5 @@
 
         a.btn.btn--primary href="mailto:surabaya.py@gmail.com" title=""
           i.fa.fa-envelope.fa-fw
-          = "Hubungi Kami"
+          ${_(u'Contact Us')}
   </%self.widgets:panel>

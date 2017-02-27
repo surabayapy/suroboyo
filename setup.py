@@ -58,8 +58,8 @@ setup(name=NAME,
       packages=find_packages(include=['s', 's.*']),
       message_extractors={"s": [
           ("**.py", "python", None),
-          ('**.html', 'jinja2', {'input_encoding': 'utf-8'}),
-          ('**.jinja2', 'jinja2', {'input_encoding': 'utf-8'}),
+          ('**/templates/**.html', 'mako',  {'input_encoding': 'utf-8'}),
+          ('**/templates/**.mako', 'mako',  {'input_encoding': 'utf-8'}),
           ('static/**', 'ignore', None)
       ]
       },
