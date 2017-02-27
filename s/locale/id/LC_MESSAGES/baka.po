@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: s 0.1.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2017-02-27 14:28+0700\n"
-"PO-Revision-Date: 2017-02-27 14:28+0700\n"
+"PO-Revision-Date: 2017-02-27 15:26+0700\n"
 "Last-Translator: \n"
 "Language: id\n"
 "Language-Team: id <LL@li.org>\n"
@@ -113,7 +113,7 @@ msgstr ", termasuk "
 
 #: s/membership/templates/register.html:38
 msgid "Cookies Use Policy."
-msgstr "Ketentuan penggunaan Cookies kita."
+msgstr "Kebijakan penggunaan Cookies kita."
 
 #: s/membership/templates/register.html:41
 msgid "Sign up"

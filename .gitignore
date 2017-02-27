@@ -76,3 +76,4 @@ ENV/
 *public/kara.ui.*.js
 *redis/
 *.sass-cache
+*.pid
