@@ -70,6 +70,7 @@ ENV/
 .idea/
 
 # generate file
+*conf/gunicorn.ini
 *public/vendor.*
 *public/baka.*.css
 *public/baka.*.js
