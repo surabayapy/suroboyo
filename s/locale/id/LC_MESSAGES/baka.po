@@ -159,8 +159,8 @@ msgstr ""
 #: s/membership/views/register.py:157
 msgid "Please validate your email and activate your account by visiting: {link}"
 msgstr ""
-"Email anda menunggu verifikasi. Mohon aktifkan akun Anda. Ingat untuk "
-"mengecek spam folder anda jika email tidak masuk ke Inbox email anda."
+"Email anda menunggu verifikasi. Mohon aktifkan akun Anda dan kunjungi {link}. Ingat untuk "
+"mengecek spam folder anda jika email tidak masuk ke Inbox email anda. "
 
 #: s/membership/views/register.py:161
 msgid "Please activate your account"
