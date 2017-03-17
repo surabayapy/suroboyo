@@ -13,6 +13,7 @@ ENV = [
     EnvSetting('redis.sessions.password', 'REDIS_PWD'),
     EnvSetting('redis.sessions.secret', 'REDIS_SECRET'),
     EnvSetting('scheduler.host', 'REDIS_HOST'),
+    EnvSetting('url', 'DATABASE_URL', type=database_url),
     EnvSetting('sqlalchemy.url', 'DATABASE_URL', type=database_url),
     EnvSetting('ga_tracking_id', 'GA_ID'),
 ]
