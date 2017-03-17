@@ -78,3 +78,7 @@ ENV/
 *redis/
 *.sass-cache
 *.pid
+noob.md
+*.export
+
+/s/assets/.webassets-manifest

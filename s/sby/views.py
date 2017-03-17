@@ -22,12 +22,10 @@
  # 
  # views
 """
+from baka.router import home_config
 
 
-from baka.router import route
-
-
-@route('/', name='home', renderer='s:sby/templates/comingsoon.html')
+@home_config(renderer='s:sby/templates/comingsoon.html')
 def home_index(request):
     _ = request
     return {'name': __name__}

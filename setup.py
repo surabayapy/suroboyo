@@ -25,7 +25,10 @@ INSTALL_REQUIRES = [
     'pyramid-debugtoolbar',
     'pyramid-mako',
     'pyramid_mailer',
-    'apscheduler'
+    'sqlalchemy',
+    'apscheduler',
+    'baka_model',
+    'baka_assets',
 ]
 EXTRAS_REQUIRE = {
     'dev': ['check-manifest'],

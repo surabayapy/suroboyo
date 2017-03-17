@@ -1,3 +1,1 @@
 -e git+https://kubuskotak@bitbucket.org/boolein/baka.git@master#egg=baka
--e git+https://kubuskotak@bitbucket.org/boolein/baka_assets.git@master#egg=baka_assets
--e git+https://kubuskotak@bitbucket.org/boolein/baka_model.git@master#egg=baka_model

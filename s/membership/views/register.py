@@ -81,7 +81,7 @@ def _register_view(request):
             RegistrationEvent(request, user))
 
         return {
-            'redirect': request.route_url('home'),
+            'redirect': request.base_url,
             'success_message': _(u'Saved'),
             'response': 0
         }
@@ -94,7 +94,6 @@ def _register_view(request):
 
 @route(
     '/register.activate.{code:.*}',
-    request_method='GET',
     renderer='json')
 def register_activate(request):
     pid, code = validasi_activation(
@@ -120,7 +119,7 @@ def register_activate(request):
                 url=request.route_url('_register_view')),
                 'error')
             return httpexceptions.HTTPFound(
-                location=request.route_url('home'))
+                location=request.base_url)
 
         User = request.find_model('membership.user')
         user = User.get_by_activation(request.db, activation)
@@ -137,7 +136,7 @@ def register_activate(request):
         request.registry.notify(ActivationEvent(request, user))
 
         return httpexceptions.HTTPFound(
-            location=request.route_url('home'))
+            location=request.base_url)
 
     return httpexceptions.HTTPNotFound()
 

@@ -23,6 +23,7 @@
  # register
 """
 import logging
+
 from ..forms.user import email_validator
 from baka import forms
 import colander
@@ -48,9 +49,11 @@ def confirm_email_validator(node, kw):
 class _RegisterAddSchema(forms.CSRFSchema):
     first = colander.SchemaNode(
         colander.String(),
+        validator=colander.All(colander.Length(min=3, max=128))
     )
     last = colander.SchemaNode(
         colander.String(),
+        validator=colander.All(colander.Length(min=3, max=128))
     )
     email = colander.SchemaNode(
         colander.String(),

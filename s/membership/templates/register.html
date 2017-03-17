@@ -13,7 +13,12 @@
     .col-md-6.col-xs-12
       h2.red.title
         span ${_(u'Join us, Surabaya.py Community')}
-      span.divider.mb-12
+
+      a.btn.btn--primary.col-xs-12.mb-12 href="#"
+        ${_(u'Register with facebook')}
+        i.fa.fa-facebook.fa-fw
+
+      span.horizontal.divider.mb-12: Or
       ${h.tags.form(
         action or request.url,
         class_="_ajax %s" % ('readonly' if readonly else ''),
